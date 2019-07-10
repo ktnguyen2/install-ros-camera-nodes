@@ -1,0 +1,12 @@
+## Installation
+sudo apt-get install 'ros-kinetic-realsense-camera'
+
+## Check if camera is appropriately connected. Should see '/dev/video0 /dev/video1'
+ls /dev/video*
+
+## Launch
+roscore
+roslaunch realsense_camera f200_nodelet_default.launch
+
+## Image view. Click 'camera/image_raw' under topic list in published window
+rqt_image_view
