@@ -37,7 +37,8 @@ source /devel/setup.bash
 ls /dev/video*
 # Launch core of ROS
 roscore
-# Launch gscam node
+# Launch gscam node. Change device=/dev/video* to the appropriate value based on command ls /dev/video*
+# (e.g. if you have /dev/video1 /dev/video2, then /dev/video1 refers to RGB value and /dev/video2 refers to depth ... i think)
 roscd gscam
 export GSCAM_CONFIG="v4l2src device=/dev/video0 ! videoscale ! video/x-raw-yuv,width=640,height=320 ! ffmpegcolorspace ! video/x-raw-rgb"
 rosrun gscam gscam
