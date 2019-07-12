@@ -39,7 +39,7 @@ ls /dev/video*
 roscore
 # Launch gscam node
 roscd gscam
-export GSCAM_CONFIG="v4l2src device=/dev/video0 ! videoscale ! video/x-raw-yuv,width=320,height=240 ! ffmpegcolorspace ! video/x-raw-rgb"
+export GSCAM_CONFIG="v4l2src device=/dev/video0 ! videoscale ! video/x-raw-yuv,width=640,height=320 ! ffmpegcolorspace ! video/x-raw-rgb"
 rosrun gscam gscam
 # To see image raw. Click '/camera/image_raw' in pop-up window
 rqt_image_view
